@@ -1,0 +1,55 @@
+.cursor-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+
+  background: #00f5ff;
+
+  pointer-events: none;
+
+  z-index: 999999;
+
+  transform: translate(-50%, -50%);
+}
+
+.cursor-ring {
+  position: fixed;
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 999px;
+
+  border: 1px solid rgba(0, 245, 255, 0.6);
+
+  pointer-events: none;
+
+  z-index: 999998;
+
+  transform: translate(-50%, -50%);
+
+  transition:
+    width 0.2s,
+    height 0.2s,
+    border 0.2s;
+}
+
+.cursor-glow {
+  position: fixed;
+
+  width: 220px;
+  height: 220px;
+
+  border-radius: 999px;
+
+  background: radial-gradient(circle, rgba(0, 245, 255, 0.18), transparent 70%);
+
+  filter: blur(35px);
+
+  pointer-events: none;
+
+  z-index: 0;
+
+  transform: translate(-50%, -50%);
+}
