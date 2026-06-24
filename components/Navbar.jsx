@@ -35,7 +35,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <button
             onClick={() => setMenuOpen(true)}
-            className="md:hidden text-foreground"
+            className="md:hidden text-foreground hover:text-success"
           >
             <FiMenu size={24} />
           </button>
@@ -44,7 +44,7 @@ export default function Navbar() {
             href="/"
             className="font-bold text-foreground text-xl tracking-wider"
           >
-            FELIX<span className="text-foreground">.</span>
+            FELIX<span className="text-success">.</span>
           </Link>
         </div>
 
@@ -82,7 +82,7 @@ export default function Navbar() {
 
         {/* Actions */}
         <div className="flex items-center gap-4">
-          <button className="hover:bg-white/5 p-2 rounded-full text-gray-400 hover:text-white transition-colors">
+          <button className="p-2 rounded-full text-forground hover:text-success transition-colors">
             <FiMoon size={18} />
           </button>
           <Link
@@ -94,7 +94,7 @@ export default function Navbar() {
         </div>
       </nav>
       <div
-        className={`fixed inset-0 z-[100] bg-background/95 backdrop-blur-xl transition-all duration-500 ${
+        className={`fixed inset-0 z-100 bg-background/95 backdrop-blur-xl transition-all duration-500 ${
           menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
@@ -102,7 +102,7 @@ export default function Navbar() {
 
         <button
           onClick={() => setMenuOpen(false)}
-          className="top-6 right-6 absolute text-foreground"
+          className="top-6 right-6 absolute text-foreground hover:text-success"
         >
           <FiX size={28} />
         </button>
@@ -126,7 +126,7 @@ export default function Navbar() {
 
           <Link
             href="/cv.pdf"
-            className="flex items-center gap-2 bg-success/10 mt-4 px-6 py-3 border border-success/30 rounded-full text-success"
+            className="md:hidden flex items-center gap-2 bg-emerald-500/10 hover:bg-emerald-500/20 px-5 py-3 border border-emerald-500/30 rounded-full font-semibold text-success text-xs tracking-wide transition-all duration-300"
           >
             Download CV
             <FiDownload />
