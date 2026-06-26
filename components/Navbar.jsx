@@ -35,7 +35,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <button
             onClick={() => setMenuOpen(true)}
-            className="md:hidden text-foreground hover:text-success"
+            className="md:hidden text-foreground hover:text-success transition-colors"
           >
             <FiMenu size={24} />
           </button>
@@ -87,7 +87,7 @@ export default function Navbar() {
           </button>
           <Link
             href="/cv.pdf"
-            className="hidden md:flex items-center gap-2 bg-emerald-500/10 hover:bg-emerald-500/20 px-4 py-2 border border-emerald-500/30 rounded-full font-semibold text-success text-xs tracking-wide transition-all duration-300"
+            className="hidden md:flex items-center gap-2 bg-success/10 hover:bg-success/20 px-4 py-2 border border-success/30 rounded-full font-semibold text-success text-xs tracking-wide transition-all duration-300"
           >
             Download CV <FiDownload size={14} />
           </Link>
@@ -126,7 +126,7 @@ export default function Navbar() {
 
           <Link
             href="/cv.pdf"
-            className="md:hidden flex items-center gap-2 bg-emerald-500/10 hover:bg-emerald-500/20 px-5 py-3 border border-emerald-500/30 rounded-full font-semibold text-success text-xs tracking-wide transition-all duration-300"
+            className="md:hidden flex items-center gap-2 bg-success/10 hover:bg-success/20 px-5 py-3 border border-success/30 rounded-full font-semibold text-success text-xs tracking-wide transition-all duration-300"
           >
             Download CV
             <FiDownload />
