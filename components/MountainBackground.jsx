@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function MountainBackground() {
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="absolute inset-0 h-full overflow-hidden pointer-events-none">
       {/* Mountains */}
       <Image
         src="/bb.png"

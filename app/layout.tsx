@@ -42,11 +42,11 @@ export default function RootLayout({
         ${geistMono.variable}
         ${spaceGrotesk.variable}
         ${roboto.variable}
-        h-full
+        
         antialiased
       `}
     >
-      <body className="flex flex-col min-h-full">
+      <body className="flex flex-col dark">
         <Cursor />
         {children}
       </body>

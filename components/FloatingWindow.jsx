@@ -60,12 +60,13 @@ export default function FloatingWindow({
       onMouseLeave={handleLeave}
       className={`
         absolute
-        glass
+        backdrop-blur-3xl
         rounded-3xl
         border
+        
         border-white/10
         overflow-hidden
-        backdrop-blur-xl
+        
         ${className}
       `}
     >

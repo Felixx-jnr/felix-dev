@@ -8,6 +8,7 @@ import { useGSAP } from "@gsap/react";
 import FloatingWindow from "./FloatingWindow";
 import DesktopWindow from "./DesktopWindow";
 import MobileWindow from "./MobileWindow";
+import PortraitGlow from "./PortraitGlow";
 
 gsap.registerPlugin(useGSAP);
 
@@ -16,34 +17,29 @@ export default function HeroRight() {
   const glowRef = useRef(null);
 
   useGSAP(() => {
-    // Image reveal
     gsap.from(imageRef.current, {
       opacity: 0,
-      y: 70,
-      duration: 1.2,
+      y: 80,
+      duration: 1.3,
       ease: "power4.out",
     });
 
-    //Glow pulse
     gsap.to(glowRef.current, {
-      scale: 1.1,
-      opacity: 0.8,
+      scale: 1.15,
+      opacity: 0.9,
       repeat: -1,
       yoyo: true,
-      duration: 2,
+      duration: 3,
       ease: "sine.inOut",
     });
   }, []);
 
   return (
-    <div className="relative flex justify-center items-center w-[700px] h-[600px]">
-      {/* Glow */}
-      <div
-        ref={glowRef}
-        className="absolute bg-success/20 blur-[160px] rounded-full"
-      />
+    <div className="relative flex justify-center items-center">
+      {/* Cyan glow */}
+      <PortraitGlow glowRef={glowRef} />
 
-      {/* Desktop Preview */}
+      {/* Floating Windows */}
       <FloatingWindow
         delay={0.2}
         className="-top-8 left-0"
@@ -51,7 +47,6 @@ export default function HeroRight() {
         <DesktopWindow />
       </FloatingWindow>
 
-      {/* Mobile Preview */}
       <FloatingWindow
         delay={0.4}
         className="right-0 bottom-8"
@@ -59,18 +54,18 @@ export default function HeroRight() {
         <MobileWindow />
       </FloatingWindow>
 
-      {/* Profile */}
+      {/* Portrait */}
       <div
         ref={imageRef}
-        className="z-20 relative"
+        className="z-20 relative w-full h-full"
       >
         <Image
           src="/me.png"
           alt="Felix"
-          width={500}
-          height={600}
+          width="550"
+          height="700"
           priority
-          className="w-[500px] object-cover"
+          className="profile-image"
         />
       </div>
     </div>
