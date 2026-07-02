@@ -1,19 +1,10 @@
 "use client";
 
-import {
-  FiArrowUpRight,
-  FiSend,
-  FiGithub,
-  FiLinkedin,
-  FiTwitter,
-  FiInstagram,
-  FiZap,
-} from "react-icons/fi";
-import HeroRight from "./HeroRight";
-import HeroLeft from "./HeroLeft";
-import GlowBackground from "./GlowBackground";
-import MountainBackground from "./MountainBackground";
-import Particles from "./Particles";
+import HeroRight from "@/components/hero/HeroRight";
+import HeroLeft from "@/components/hero/HeroLeft";
+import GlowBackground from "@/components/hero/GlowBackground";
+import MountainBackground from "@/components/hero/MountainBackground";
+import Particles from "@/components/hero/Particles";
 
 export default function Hero() {
   return (
