@@ -2,6 +2,7 @@
 
 import StackIntro from "./StackIntro";
 import StackGrid from "./StackGrid";
+import StacksGlow from "./StacksGlow";
 import MountainBackground from "../hero/MountainBackground";
 
 export default function StackSection() {
@@ -11,6 +12,7 @@ export default function StackSection() {
       className="relative flex justify-center md:px-6 lg:px-10 py-5 overflow-hidden"
     >
       <MountainBackground />
+      <StacksGlow />
 
       <div className="z-10 relative bg-background/40 backdrop-blur-xl mx-2 p-1 border border-white/10 rounded-[20px] overflow-hidden">
         {/* soft border glow */}
