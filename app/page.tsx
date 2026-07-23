@@ -6,20 +6,19 @@ import ProjectSection from "@/components/projects/ProjectSection";
 import JourneySection from "@/components/journey/JourneySection";
 import ServicesSection from "@/components/services/ServicesSection";
 import ContactSection from "@/components/contact/ContactSection";
+import Heroo from "@/components/Heroo";
 
 function page() {
   return (
     <div>
       <Navbar />
-      <Hero />
+      <Heroo />
 
-      <div className="mt-">
-        <StacksSection />
-      </div>
+      <StacksSection />
 
       <ProjectSection />
-      {/* <JourneySection /> */}
-      {/* <ServicesSection /> */}
+
+      <ServicesSection />
       {/* <ContactSection /> */}
     </div>
   );

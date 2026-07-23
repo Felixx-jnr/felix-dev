@@ -17,12 +17,14 @@ export default function StackGrid() {
     () => {
       gsap.fromTo(
         ".stack-card",
+
         {
           opacity: 0,
           y: 70,
           scale: 0.85,
           rotate: -4,
         },
+
         {
           opacity: 1,
           y: 0,
