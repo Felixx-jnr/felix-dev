@@ -5,7 +5,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 export default function StackIntro() {
   return (
     <div className="flex flex-col justify-between max-md:mt-4 h-full">
-      <div className="max-sm:pl-4">
+      <div className="px-2">
         {/* Section Label */}
 
         <span className="font-semibold text-success text-sm uppercase tracking-[0.25em]">
@@ -24,7 +24,7 @@ export default function StackIntro() {
 
         {/* Description */}
 
-        <p className="mt-8 max-w-[280px] text-foreground-muted leading-8">
+        <p className="mt-8 max-md:max-w-[400px] text-foreground-muted leading-8">
           A selection of modern technologies I use to build responsive, scalable
           and beautiful digital products for web and mobile.
         </p>

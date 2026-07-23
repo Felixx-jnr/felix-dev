@@ -46,19 +46,13 @@ export default function StackCard({ stack }) {
         animationDelay: `${stack.id * 0.15}s`,
       }}
     >
-      {/* Mouse Glow */}
-      {/* <span
-        ref={glowRef}
-        className="absolute bg-success/25 opacity-0 blur-3xl rounded-full w-44 h-44 transition-opacity -translate-x-1/2 -translate-y-1/2 duration-300 pointer-events-none"
-      /> */}
-
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-success to-accent opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500" />
 
       {/* Content */}
-      <div className="z-10 relative">
+      <div className="z-10 relative stack-card">
         {/* Icon */}
-        <div className="flex justify-center items-center rounded-2xl w-20 h-20 group-hover:scale-110 transition-transform duration-300">
+        <div className="flex justify-center items-center rounded-2xl w-18 h-18 group-hover:scale-110 transition-transform duration-300">
           <Icon
             size={48}
             style={{ color: stack.color }}

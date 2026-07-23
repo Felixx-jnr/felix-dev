@@ -11,11 +11,13 @@ function page() {
   return (
     <div>
       <Navbar />
-      {/* <Hero /> */}
-      <div className="mt-40">
+      <Hero />
+
+      <div className="mt-">
         <StacksSection />
       </div>
-      {/* <ProjectSection /> */}
+
+      <ProjectSection />
       {/* <JourneySection /> */}
       {/* <ServicesSection /> */}
       {/* <ContactSection /> */}
