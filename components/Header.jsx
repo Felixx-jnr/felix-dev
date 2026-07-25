@@ -1,45 +1,80 @@
 "use client";
-
-import { useRef } from "react";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { FiFolder } from "react-icons/fi";
+import { useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Header({ icon, header, label, description }) {
+  const headerRef = useRef(null);
+
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: headerRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+          // markers: true,
+        },
+      });
+
+      tl.from(".badge", {
+        x: -80,
+        opacity: 0,
+        duration: 0.7,
+        ease: "power3.out",
+      })
+        .from(
+          ".title",
+          {
+            x: 80,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power3.out",
+          },
+          "-=0.3",
+        )
+        .from(
+          ".description",
+          {
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power3.out",
+          },
+          "-=0.4",
+        );
+    },
+    { scope: headerRef },
+  );
+
   return (
-    <div className="mx-auto mb-20 max-w-3xl text-center">
-      {/* Section Badge */}
-      <div className="inline-flex items-center gap-2 bg-success/10 mb-6 px-4 py-2 border border-success/20 rounded-full font-medium text-success text-sm uppercase tracking-widest project-header-item">
+    <div
+      ref={headerRef}
+      className="mb-10 text-center header"
+    >
+      <div className="inline-flex items-center gap-2 bg-success/10 backdrop-blur-xl px-5 py-2 border border-success/30 rounded-full text-success badge">
         {icon}
-        {label}
+
+        <span className="font-semibold text-success text-xs uppercase tracking-[0.25em]">
+          {label}
+        </span>
       </div>
 
-      {/* Heading */}
-      <h2 className="font-heading font-bold text-5xl md:text-6xl leading-tight project-header-item">
-        Featured{" "}
+      <h2 className="mt-8 font-black text-5xl md:text-7xl title">
+        Featured
         <span className="bg-clip-text bg-gradient-to-r from-success via-primary to-accent text-transparent">
+          {" "}
           {header}
         </span>
       </h2>
 
-      {/* Description */}
-      <p className="mx-auto mt-6 max-w-2xl text-foreground-secondary text-lg leading-8 project-header-item">
+      <p className="mx-auto mt-6 max-w-3xl text-foreground-muted text-lg leading-8 description">
         {description}
       </p>
-
-      {/* Decorative Line */}
-      <div className="flex justify-center mt-10 project-header-item">
-        <div className="relative w-52 h-[2px]">
-          {/* Main Gradient */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-success to-transparent" />
-
-          {/* Glow */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-success to-transparent opacity-80 blur-md" />
-
-          {/* Center Dot */}
-          <div className="top-1/2 left-1/2 absolute bg-success shadow-[0_0_20px_#22c55e] rounded-full w-3 h-3 -translate-x-1/2 -translate-y-1/2" />
-        </div>
-      </div>
     </div>
   );
 }

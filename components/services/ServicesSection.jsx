@@ -3,17 +3,24 @@
 import ServicesGlow from "./ServicesGlow";
 import ServicesHeader from "./ServicesHeader";
 import ServicesGrid from "./ServicesGrid";
+import { FiLayers } from "react-icons/fi";
+import Header from "../Header";
 
 export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="relative py-36 overflow-hidden"
+      className="relative py-12 overflow-hidden"
     >
       <ServicesGlow />
 
-      <div className="z-10 relative mx-auto px-6 md:px-12 max-w-7xl">
-        <ServicesHeader />
+      <div className="z-10 relative mx-auto md:px-12 max-w-8xl">
+        <Header
+          icon={<FiLayers className="text-success" />}
+          header="Services"
+          label="What I Offer"
+          description="From responsive web applications to cross-platform mobile apps, I build fast, scalable, and engaging digital experiences."
+        />
 
         <ServicesGrid />
       </div>

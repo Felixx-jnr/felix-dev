@@ -12,7 +12,9 @@ function page() {
   return (
     <div>
       <Navbar />
-      <Heroo />
+      <div className="mb-8">
+        <Heroo />
+      </div>
 
       <StacksSection />
 
