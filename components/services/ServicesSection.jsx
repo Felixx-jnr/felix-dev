@@ -14,7 +14,7 @@ export default function ServicesSection() {
     >
       <ServicesGlow />
 
-      <div className="z-10 relative mx-auto md:px-12 max-w-8xl">
+      <div className="z-10 relative mx-auto px-4 md:px-12 max-w-8xl">
         <Header
           icon={<FiLayers className="text-success" />}
           header="Services"

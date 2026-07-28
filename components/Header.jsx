@@ -66,7 +66,7 @@ export default function Header({ icon, header, label, description }) {
 
       <h2 className="mt-8 font-black text-5xl md:text-7xl title">
         Featured
-        <span className="bg-clip-text bg-gradient-to-r from-success via-primary to-accent text-transparent">
+        <span className="bg-clip-text bg-gradient-to-r from-success via-primary to-accent text-transparent title">
           {" "}
           {header}
         </span>

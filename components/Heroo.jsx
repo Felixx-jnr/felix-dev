@@ -58,7 +58,7 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="home"
-      className="relative flex justify-center items-center px-4 sm:px-8 w-full min-h-scree overflow-hidden text-foreground"
+      className="relative flex justify-center items-center px-4 sm:px-8 w-full overflow-hidden text-foreground"
     >
       {/* Background lighting */}
 

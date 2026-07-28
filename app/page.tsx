@@ -11,17 +11,16 @@ import Heroo from "@/components/Heroo";
 function page() {
   return (
     <div>
-      <Navbar />
-      <div className="mb-8">
-        <Heroo />
-      </div>
+      {/* <Navbar /> */}
+
+      <Heroo />
 
       <StacksSection />
 
       <ProjectSection />
 
       <ServicesSection />
-      {/* <ContactSection /> */}
+      <ContactSection />
     </div>
   );
 }

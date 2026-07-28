@@ -13,22 +13,7 @@ export default function ServiceCard({ service }) {
 
   const Icon = service.icon;
 
-  useGSAP(() => {
-    gsap.from(cardRef.current, {
-      opacity: 0,
-      y: 50,
-      duration: 0.8,
-      ease: "power3.out",
-    });
-
-    gsap.to(cardRef.current, {
-      y: -10,
-      repeat: -1,
-      yoyo: true,
-      duration: 3,
-      ease: "sine.inOut",
-    });
-  }, []);
+  useGSAP(() => {});
 
   const handleMove = (e) => {
     const rect = cardRef.current.getBoundingClientRect();
@@ -41,13 +26,13 @@ export default function ServiceCard({ service }) {
     <div
       ref={cardRef}
       onMouseMove={handleMove}
-      className="group relative bg-background/40 backdrop-blur-xl p-8 border border-white/10 hover:border-success/40 rounded-3xl overflow-hidden transition-all hover:-translate-y-4 duration-500"
+      className="group relative bg-background/40 backdrop-blur-xl p-4 border border-white/10 hover:border-success/40 rounded-3xl overflow-hidden transition-all hover:-translate-y-4 duration-500 service-card"
     >
       {/* Cursor Glow */}
 
       <span
         ref={glowRef}
-        className="absolute bg-success/20 opacity-0 group-hover:opacity-100 blur-3xl rounded-full w-52 h-52 transition-opacity -translate-x-1/2 -translate-y-1/2 duration-300 pointer-events-none"
+        className="absolute bg-success/20 opacity-0 group-hover:opacity-100 blur-3xl rounded-full transition-opacity -translate-x-1/2 -translate-y-1/2 duration-300 pointer-events-none"
       />
 
       {/* Gradient Border */}
@@ -57,41 +42,26 @@ export default function ServiceCard({ service }) {
       <div className="z-10 relative">
         {/* Icon */}
 
-        <div
-          className="flex justify-center items-center rounded-2xl w-20 h-20"
-          style={{
-            background: `${service.color}20`,
-          }}
-        >
+        <div className="flex flex-col justify-center items-center gap-2">
           <Icon
-            size={40}
+            size={30}
             style={{
               color: service.color,
             }}
           />
+          {/* Title */}
+
+          <h3 className="font-semibold text-lg">{service.title}</h3>
         </div>
-
-        {/* Title */}
-
-        <h3 className="mt-8 font-bold text-2xl">{service.title}</h3>
 
         {/* Description */}
 
-        <p className="mt-5 text-foreground-muted leading-8">
-          {service.description}
-        </p>
-
-        {/* Learn More */}
-
-        <div className="flex items-center gap-2 mt-10 font-semibold text-success">
-          Learn More
-          <FiArrowUpRight className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
-        </div>
+        <p className="mt-2 text-foreground-muted">{service.description}</p>
 
         {/* Bottom Accent */}
 
         <div
-          className="mt-8 rounded-full w-0 group-hover:w-full h-[3px] transition-all duration-500"
+          className="mt-4 rounded-full w-0 group-hover:w-full h-[3px] transition-all duration-500"
           style={{
             background: service.color,
           }}

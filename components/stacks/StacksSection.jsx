@@ -4,8 +4,6 @@ import StackIntro from "./StackIntro";
 import StackGrid from "./StackGrid";
 import StacksGlow from "./StacksGlow";
 import MountainBackground from "../hero/MountainBackground";
-import Header from "../Header";
-import { FiFolder } from "react-icons/fi";
 
 export default function StackSection() {
   return (
