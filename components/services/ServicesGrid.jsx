@@ -20,7 +20,7 @@ export default function ServicesGrid() {
 
         {
           opacity: 0,
-          y: 70,
+          y: 150,
           scale: 0,
           rotate: -4,
         },
@@ -30,9 +30,9 @@ export default function ServicesGrid() {
           y: 0,
           scale: 1,
           rotate: 0,
-          duration: 0.8,
+          duration: 0.5,
           stagger: {
-            amount: 0.9,
+            amount: 0.5,
             from: "start",
           },
           ease: "power3.out",
