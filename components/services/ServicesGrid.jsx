@@ -30,7 +30,7 @@ export default function ServicesGrid() {
           y: 0,
           scale: 1,
           rotate: 0,
-          duration: 1,
+          duration: 0.8,
           stagger: {
             amount: 0.9,
             from: "start",
