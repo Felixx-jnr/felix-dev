@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export default function Header({ icon, header, label, description }) {
+export default function Header({ icon, header, label, description, text }) {
   const headerRef = useRef(null);
 
   useGSAP(
@@ -65,7 +65,7 @@ export default function Header({ icon, header, label, description }) {
       </div>
 
       <h2 className="mt-8 font-black text-5xl md:text-7xl title">
-        Featured
+        {text}
         <span className="bg-clip-text bg-gradient-to-r from-success via-primary to-accent text-transparent title">
           {" "}
           {header}

@@ -20,18 +20,18 @@ export default function ContactForm() {
   const [formData, setFormData] = useState(initialForm);
   const [status, setStatus] = useState("idle");
 
-  useGSAP(
-    () => {
-      gsap.from(".contact-form-item", {
-        opacity: 0,
-        x: 40,
-        duration: 0.8,
-        stagger: 0.12,
-        ease: "power3.out",
-      });
-    },
-    { scope: formRef },
-  );
+  // useGSAP(
+  //   () => {
+  //     gsap.from(".contact-form-item", {
+  //       opacity: 0,
+  //       x: 40,
+  //       duration: 0.8,
+  //       stagger: 0.12,
+  //       ease: "power3.out",
+  //     });
+  //   },
+  //   { scope: formRef },
+  // );
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -143,7 +143,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="group flex justify-center items-center gap-3 bg-gradient-to-r from-success via-primary to-accent disabled:opacity-60 mt-7 px-6 py-4 rounded-2xl w-full font-bold text-black transition-transform hover:-translate-y-1 duration-300 contact-form-item"
+          className="group flex justify-center items-center gap-3 bg-gradient-to-r from-success via-primary to-accent disabled:opacity-60 mt-7 py-4 rounded-2xl w-full font-bold text-black duration-300 contact-form-item"
         >
           {status === "sending" && (
             <>
@@ -163,7 +163,7 @@ export default function ContactForm() {
             <>
               <FiSend size={18} />
               Send Message
-              <FiArrowUpRight className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 duration-300" />
+              <FiArrowUpRight className="group-hover:-translate-y-1 duration-300" />
             </>
           )}
         </button>

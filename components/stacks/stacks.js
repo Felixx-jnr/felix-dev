@@ -125,7 +125,7 @@ export const stacks = [
     name: "Express.js",
     subtitle: "Server-Side Framework",
     icon: SiExpress,
-    color: "#000000",
+    color: "#888888",
   },
 
   {

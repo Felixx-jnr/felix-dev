@@ -16,6 +16,7 @@ export default function ProjectsSection() {
       <div className="z-10 relative mx-auto max-w-8xl">
         <Header
           icon={<FiFolder />}
+          text="Featured"
           header="Projects"
           label="Projects"
           description="A collection of applications I've designed and built, focused on performance, scalability, and creating exceptional user experiences across web and mobile platforms."
