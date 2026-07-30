@@ -13,40 +13,44 @@ export default function ContactInfo() {
 
   useGSAP(
     () => {
-      const items = gsap.utils.toArray(".contact-info-item");
-
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top 80%",
           end: "bottom 20%",
-          toggleActions: "play reverse play reverse",
+          toggleActions: "play none none reverse",
         },
       });
 
-      items.forEach((item) => {
-        tl.fromTo(
-          item,
-          {
-            opacity: 0,
-            x: -80,
-            scale: 0.95,
-          },
-          {
-            opacity: 1,
-            x: 0,
-            scale: 1,
-            duration: 0.5,
-            ease: "power3.out",
-          },
-          ">-0.15",
-        );
-      });
+      tl.from(".contact-heading", {
+        opacity: 0,
+        y: 80,
+        duration: 0.7,
+        stagger: 0.15,
+        ease: "power3.out",
+      }).fromTo(
+        ".contact-info-item",
+        {
+          opacity: 0,
+          x: -80,
+          scale: 0.95,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          scale: 1,
+          duration: 0.5,
+          stagger: 0.15,
+          ease: "power3.out",
+        },
+        "-=0.1",
+      );
     },
     {
       scope: containerRef,
     },
   );
+
   return (
     <div
       ref={containerRef}
@@ -55,15 +59,15 @@ export default function ContactInfo() {
       <div className="absolute inset-0 bg-gradient-to-br from-success/10 via-transparent to-primary/10 pointer-events-none" />
 
       <div className="z-10 relative">
-        <span className="font-semibold text-success text-sm uppercase tracking-[0.2em]">
+        <span className="font-semibold text-success text-sm uppercase tracking-[0.2em] contact-heading header">
           Contact Details
         </span>
 
-        <h3 className="mt-4 font-heading font-bold text-3xl">
+        <h3 className="mt-4 font-heading font-bold text-3xl contact-heading label">
           Start a conversation
         </h3>
 
-        <p className="mt-4 text-foreground-muted leading-7">
+        <p className="mt-4 text-foreground-muted leading-7 contact-heading desc">
           I&apos;m open to freelance projects, remote opportunities, contract
           work, and meaningful collaborations.
         </p>

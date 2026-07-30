@@ -26,6 +26,12 @@ export default function SocialLinks() {
           stagger: 0.12,
           duration: 0.6,
           ease: "back.out(1.8)",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse",
+          },
         },
       );
     },
