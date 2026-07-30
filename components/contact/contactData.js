@@ -12,15 +12,15 @@ export const contactDetails = [
   {
     id: 1,
     label: "Email",
-    value: "hello@felix.dev",
-    href: "mailto:hello@felix.dev",
+    value: "uyuoukoh@gmail.com",
+    href: "mailto:uyuoukoh@gmail.com",
     icon: FiMail,
   },
   {
     id: 2,
     label: "Phone",
-    value: "+234 000 000 0000",
-    href: "tel:+2340000000000",
+    value: "+234 814 211 8703",
+    href: "tel:+2348142118703",
     icon: FiPhone,
   },
   {
