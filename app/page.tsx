@@ -11,7 +11,7 @@ import Heroo from "@/components/Heroo";
 function page() {
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar />
 
       <Heroo />
 

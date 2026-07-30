@@ -3,26 +3,50 @@
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { contactDetails } from "./contactData";
 
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function ContactInfo() {
   const containerRef = useRef(null);
 
   useGSAP(
     () => {
-      gsap.from(".contact-info-item", {
-        opacity: 0,
-        x: -40,
-        duration: 0.8,
-        stagger: 0.16,
-        ease: "power3.out",
+      const items = gsap.utils.toArray(".contact-info-item");
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play reverse play reverse",
+        },
+      });
+
+      items.forEach((item) => {
+        tl.fromTo(
+          item,
+          {
+            opacity: 0,
+            x: -80,
+            scale: 0.95,
+          },
+          {
+            opacity: 1,
+            x: 0,
+            scale: 1,
+            duration: 0.5,
+            ease: "power3.out",
+          },
+          ">-0.15",
+        );
       });
     },
-    { scope: containerRef },
+    {
+      scope: containerRef,
+    },
   );
-
   return (
     <div
       ref={containerRef}
@@ -50,7 +74,7 @@ export default function ContactInfo() {
 
             const content = (
               <>
-                <div className="flex flex-none justify-center items-center bg-success/10 border border-success/20 rounded-2xl w-12 h-12 text-success group-hover:scale-110 transition-transform duration-300">
+                <div className="flex flex-none justify-center items-center bg-success/10 border border-success/20 rounded-2xl w-12 h-12 text-success group-hover:scale-110 duration-300">
                   <Icon size={20} />
                 </div>
 
