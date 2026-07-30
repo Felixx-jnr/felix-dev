@@ -48,7 +48,39 @@ export default function ContactForm() {
     setStatus("sending");
 
     // Replace this timeout with an API request.
-    await new Promise((resolve) => setTimeout(resolve, 900));
+    async function handleSubmit(event) {
+      event.preventDefault();
+
+      if (status === "sending") return;
+
+      setStatus("sending");
+
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+          throw new Error(result.message || "Unable to send message.");
+        }
+
+        setStatus("success");
+        setFormData(initialForm);
+
+        window.setTimeout(() => {
+          setStatus("idle");
+        }, 3000);
+      } catch (error) {
+        console.error(error);
+        setStatus("error");
+      }
+    }
 
     setStatus("success");
     setFormData(initialForm);
@@ -167,10 +199,17 @@ export default function ContactForm() {
             </>
           )}
         </button>
+        {status === "error" && (
+          <p
+            className="mt-4 text-red-500 text-sm text-center"
+            role="alert"
+          >
+            Your message could not be sent. Please try again.
+          </p>
+        )}
 
         <p className="mt-4 text-foreground-muted text-xs text-center contact-form-item">
-          The form interface is ready. Connect it to your email API before
-          deployment.
+          I usually respond within one to two business days.
         </p>
       </div>
     </form>
