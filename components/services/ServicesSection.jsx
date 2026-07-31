@@ -9,7 +9,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="relative py-12 overflow-hidden"
+      className="relative py-12 overflow-hidden scroll-mt-24"
     >
       <ServicesGlow />
 

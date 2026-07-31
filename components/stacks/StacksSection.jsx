@@ -9,7 +9,7 @@ export default function StackSection() {
   return (
     <section
       id="skills"
-      className="relative flex justify-center md:px-6 lg:px-10 py-10 overflow-hidden"
+      className="relative flex justify-center md:px-6 lg:px-10 py-10 overflow-hidden scroll-mt-24"
     >
       <MountainBackground />
       <StacksGlow />

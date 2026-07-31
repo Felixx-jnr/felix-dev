@@ -2,13 +2,14 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FiDownload, FiMoon, FiX, FiMenu } from "react-icons/fi";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 const links = [
   { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
   { href: "#skills", label: "Skills" },
-  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#services", label: "Services" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -27,6 +28,45 @@ export default function Navbar() {
       document.body.style.overflow = "auto";
     };
   }, [menuOpen]);
+
+  useEffect(() => {
+    const sections = links.map((link) => document.querySelector(link.href));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveLink(`#${entry.target.id}`);
+          }
+        });
+      },
+      {
+        threshold: 0.6, // 60% of section must be visible
+      },
+    );
+
+    sections.forEach((section) => {
+      if (section) observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, []);
+
+  useGSAP(() => {
+    links.forEach((link) => {
+      ScrollTrigger.create({
+        trigger: link.href,
+        start: "top center",
+        end: "bottom center",
+        onEnter: () => setActiveLink(link.href),
+        onEnterBack: () => setActiveLink(link.href),
+      });
+    });
+  });
   return (
     <>
       <nav className="top-0 left-0 z-50 fixed flex justify-between items-center bg-background/20 backdrop-blur-md px-6 lg:px-12 py-4 border-foreground/20 border-b w-full">

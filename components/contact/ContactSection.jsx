@@ -11,7 +11,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative py-12 overflow-hidden"
+      className="relative py-12 overflow-hidden scroll-mt-24"
     >
       <ContactGlow />
 
