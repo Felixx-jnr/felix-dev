@@ -32,21 +32,21 @@ export default function ContactInfo() {
         ".contact-info-item",
         {
           opacity: 0,
-          x: -80,
+          x: -40,
           scale: 0.95,
         },
         {
           opacity: 1,
           x: 0,
           scale: 1,
-          duration: 0.45,
+          duration: 0.5,
           stagger: {
-            each: 0.3,
+            each: 0.15,
             from: "start",
           },
           ease: "power3.out",
         },
-        "-=0.1",
+        "-=0.3",
       );
     },
     {

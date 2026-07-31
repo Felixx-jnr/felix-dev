@@ -4,8 +4,9 @@ import { useRef, useState } from "react";
 import { FiArrowUpRight, FiCheck, FiSend } from "react-icons/fi";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const initialForm = {
   name: "",
@@ -21,18 +22,46 @@ export default function ContactForm() {
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState("");
 
-  // useGSAP(
-  //   () => {
-  //     gsap.from(".contact-form-item", {
-  //       opacity: 0,
-  //       x: 40,
-  //       duration: 0.8,
-  //       stagger: 0.12,
-  //       ease: "power3.out",
-  //     });
-  //   },
-  //   { scope: formRef },
-  // );
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: formRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      tl.from(formRef.current, {
+        opacity: 0,
+        y: 40,
+        duration: 0.7,
+        ease: "power3.out",
+      }).fromTo(
+        ".contact-form-item",
+        {
+          opacity: 0,
+          y: 40,
+        },
+        {
+          opacity: 1,
+          y: 1,
+
+          duration: 0.5,
+          stagger: {
+            each: 0.15,
+            from: "start",
+          },
+          ease: "power3.out",
+        },
+        "-=0.3",
+      );
+    },
+    {
+      scope: formRef,
+    },
+  );
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -72,17 +101,17 @@ export default function ContactForm() {
       window.setTimeout(() => {
         setStatus("idle");
       }, 3000);
-   } catch (error) {
-  console.error(error);
+    } catch (error) {
+      console.error(error);
 
-  setError(
-    error instanceof Error
-      ? error.message
-      : "An unexpected error occurred.",
-  );
+      setError(
+        error instanceof Error
+          ? error.message
+          : "An unexpected error occurred.",
+      );
 
-  setStatus("error");
-}
+      setStatus("error");
+    }
   }
 
   const inputClassName =
