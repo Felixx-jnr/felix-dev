@@ -19,6 +19,7 @@ export default function ContactForm() {
 
   const [formData, setFormData] = useState(initialForm);
   const [status, setStatus] = useState("idle");
+  const [error, setError] = useState("");
 
   // useGSAP(
   //   () => {
@@ -48,6 +49,7 @@ export default function ContactForm() {
     if (status === "sending") return;
 
     setStatus("sending");
+    setError("");
 
     try {
       const response = await fetch("/api", {
@@ -70,10 +72,17 @@ export default function ContactForm() {
       window.setTimeout(() => {
         setStatus("idle");
       }, 3000);
-    } catch (error) {
-      console.error("Contact form error:", error);
-      setStatus("error");
-    }
+   } catch (error) {
+  console.error(error);
+
+  setError(
+    error instanceof Error
+      ? error.message
+      : "An unexpected error occurred.",
+  );
+
+  setStatus("error");
+}
   }
 
   const inputClassName =
@@ -173,7 +182,7 @@ export default function ContactForm() {
           {status === "success" && (
             <>
               <FiCheck size={19} />
-              Message Ready
+              Message Sent
             </>
           )}
 
@@ -184,12 +193,21 @@ export default function ContactForm() {
               <FiArrowUpRight className="group-hover:-translate-y-1 duration-300" />
             </>
           )}
+          {status === "error" && (
+            <>
+              <FiSend size={18} />
+              Try Again
+            </>
+          )}
         </button>
+
         {status === "error" && (
-          <>
-            <FiSend size={18} />
-            Try Again
-          </>
+          <p
+            role="alert"
+            className="mt-4 font-bold text-red-600 text-xs text-center"
+          >
+            {error}
+          </p>
         )}
 
         <p className="mt-4 text-foreground-muted text-xs text-center contact-form-item">

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { FiArrowDown, FiArrowUpRight } from "react-icons/fi";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import Particles from "./hero/Particles";
 
 gsap.registerPlugin(useGSAP);
 
@@ -61,6 +62,8 @@ export default function Hero() {
       className="relative flex justify-center items-center px-4 sm:px-8 w-full overflow-hidden text-foreground"
     >
       {/* Background lighting */}
+
+      <Particles />
 
       <div className="top-[45%] left-1/2 absolute bg-primary/15 blur-[140px] rounded-full w-[420px] sm:w-[600px] h-[420px] sm:h-[600px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 

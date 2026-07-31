@@ -39,8 +39,11 @@ export default function ContactInfo() {
           opacity: 1,
           x: 0,
           scale: 1,
-          duration: 0.5,
-          stagger: 0.15,
+          duration: 0.45,
+          stagger: {
+            each: 0.3,
+            from: "start",
+          },
           ease: "power3.out",
         },
         "-=0.1",
