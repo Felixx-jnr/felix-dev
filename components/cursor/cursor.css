@@ -1,55 +1,50 @@
-.cursor-dot {
+.cursor-dot,
+.cursor-ring,
+.cursor-glow {
   position: fixed;
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-
-  background: #00f5ff;
-
+  top: 0;
+  left: 0;
   pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+}
 
-  z-index: 999999;
-
-  transform: translate(-50%, -50%);
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--success);
 }
 
 .cursor-ring {
-  position: fixed;
-
   width: 36px;
   height: 36px;
-
-  border-radius: 999px;
-
-  border: 1px solid rgba(0, 245, 255, 0.6);
-
-  pointer-events: none;
-
-  z-index: 999998;
-
-  transform: translate(-50%, -50%);
-
-  transition:
-    width 0.2s,
-    height 0.2s,
-    border 0.2s;
+  border: 1px solid var(--success);
+  border-radius: 50%;
 }
 
 .cursor-glow {
-  position: fixed;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--success) 15%, transparent);
+  filter: blur(18px);
+}
 
-  width: 220px;
-  height: 220px;
+/* Hide custom cursor on phones and touch devices */
+@media (hover: none), (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring,
+  .cursor-glow {
+    display: none;
+  }
+}
 
-  border-radius: 999px;
-
-  background: radial-gradient(circle, rgba(0, 245, 255, 0.18), transparent 70%);
-
-  filter: blur(35px);
-
-  pointer-events: none;
-
-  z-index: 0;
-
-  transform: translate(-50%, -50%);
+/* Optional: hide the normal cursor only on desktop */
+@media (hover: hover) and (pointer: fine) {
+  body,
+  a,
+  button {
+    cursor: none;
+  }
 }

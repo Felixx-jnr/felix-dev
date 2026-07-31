@@ -15,30 +15,38 @@ export default function Cursor() {
     let ringX = 0;
     let ringY = 0;
 
+    let animationFrameId;
+
     const move = (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
 
-      dotRef.current.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+      if (dotRef.current) {
+        dotRef.current.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+      }
     };
-
-    window.addEventListener("mousemove", move);
 
     const animate = () => {
       ringX += (mouseX - ringX) * 0.12;
       ringY += (mouseY - ringY) * 0.12;
 
-      ringRef.current.style.transform = `translate(${ringX}px, ${ringY}px)`;
+      if (ringRef.current) {
+        ringRef.current.style.transform = `translate(${ringX}px, ${ringY}px)`;
+      }
 
-      glowRef.current.style.transform = `translate(${ringX}px, ${ringY}px)`;
+      if (glowRef.current) {
+        glowRef.current.style.transform = `translate(${ringX}px, ${ringY}px)`;
+      }
 
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
     };
 
-    animate();
+    window.addEventListener("mousemove", move);
+    animationFrameId = requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener("mousemove", move);
+      cancelAnimationFrame(animationFrameId);
     };
   }, []);
 

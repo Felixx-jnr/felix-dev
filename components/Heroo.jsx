@@ -31,17 +31,19 @@ export default function Hero() {
           stagger: 0.14,
           duration: 1.2,
         })
+        .from(".hero-img", {
+          opacity: 0,
+          y: 30,
 
-        .from(
-          ".hero-content-item",
-          {
-            opacity: 0,
-            y: 30,
-            stagger: 0.12,
-            duration: 0.7,
-          },
-          "-=0.5",
-        );
+          duration: 1,
+        })
+
+        .from(".hero-content-item", {
+          opacity: 0,
+          y: 30,
+          stagger: 0.12,
+          duration: 0.7,
+        });
     },
     {
       scope: sectionRef,
@@ -112,7 +114,7 @@ export default function Hero() {
             fill
             priority
             sizes="(max-width: 640px) 340px, (max-width: 768px) 440px, (max-width: 1024px) 520px, 580px"
-            className="drop-shadow-[0_20px_60px_rgba(0,0,0,0.4)] object-bottom object-contain"
+            className="drop-shadow-[0_20px_60px_rgba(0,0,0,0.4)] object-bottom object-contain hero-img"
           />
         </div>
       </div>

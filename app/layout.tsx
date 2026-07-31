@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Inter, Geist_Mono, Roboto } from "next/font/google";
 import Cursor from "@/components/cursor/Cursor";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
@@ -49,6 +50,7 @@ export default function RootLayout({
       <body className="flex flex-col dark">
         <Cursor />
         {children}
+        <Analytics />
       </body>
     </html>
   );

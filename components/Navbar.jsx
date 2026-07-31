@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { FiDownload, FiMoon, FiX, FiMenu } from "react-icons/fi";
+import { FiDownload, FiX, FiMenu } from "react-icons/fi";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
@@ -41,7 +41,7 @@ export default function Navbar() {
         });
       },
       {
-        threshold: 0.6, // 60% of section must be visible
+        threshold: 0.6,
       },
     );
 
@@ -82,6 +82,7 @@ export default function Navbar() {
 
           <Link
             href="/"
+            id="#home"
             className="font-bold text-foreground text-xl tracking-wider"
           >
             FELIX<span className="text-success">.</span>
@@ -122,11 +123,9 @@ export default function Navbar() {
 
         {/* Actions */}
         <div className="flex items-center gap-4">
-          <button className="p-2 rounded-full text-forground hover:text-success transition-colors">
-            <FiMoon size={18} />
-          </button>
           <Link
-            href="/cv.pdf"
+            target="_blank"
+            href="https://drive.google.com/file/d/1PBd6asV5fIGmQEbWVAdXANbTjBtXPBji/view?usp=sharing"
             className="hidden md:flex items-center gap-2 bg-success/10 hover:bg-success/20 px-4 py-2 border border-success/30 rounded-full font-semibold text-success text-xs tracking-wide transition-all duration-300"
           >
             Download CV <FiDownload size={14} />
@@ -165,7 +164,8 @@ export default function Navbar() {
           ))}
 
           <Link
-            href="/cv.pdf"
+            target="_blank"
+            href="https://drive.google.com/file/d/1PBd6asV5fIGmQEbWVAdXANbTjBtXPBji/view?usp=sharing"
             className="md:hidden flex items-center gap-2 bg-success/10 hover:bg-success/20 px-5 py-3 border border-success/30 rounded-full font-semibold text-success text-xs tracking-wide transition-all duration-300"
           >
             Download CV
