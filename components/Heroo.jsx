@@ -17,6 +17,30 @@ export default function Hero() {
 
   useGSAP(
     () => {
+      if (!sectionRef.current) return;
+
+      // Set every animation starting position while the section is hidden.
+      gsap.set(".hero-word", {
+        autoAlpha: 0,
+        y: 120,
+        rotateX: -25,
+      });
+
+      gsap.set(".hero-img", {
+        autoAlpha: 0,
+        y: 30,
+      });
+
+      gsap.set(".hero-content-item", {
+        autoAlpha: 0,
+        y: 30,
+      });
+
+      // Reveal the section only after GSAP has applied all starting styles.
+      gsap.set(sectionRef.current, {
+        visibility: "visible",
+      });
+
       const timeline = gsap.timeline({
         defaults: {
           ease: "power3.out",
@@ -24,26 +48,32 @@ export default function Hero() {
       });
 
       timeline
-        .from(".hero-word", {
-          opacity: 0,
-          y: 120,
-          rotateX: -25,
+        .to(".hero-word", {
+          autoAlpha: 1,
+          y: 0,
+          rotateX: 0,
           stagger: 0.14,
           duration: 1.2,
         })
-        .from(".hero-img", {
-          opacity: 0,
-          y: 30,
-
-          duration: 1,
-        })
-
-        .from(".hero-content-item", {
-          opacity: 0,
-          y: 30,
-          stagger: 0.12,
-          duration: 0.7,
-        });
+        .to(
+          ".hero-img",
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 1,
+          },
+          "-=0.7",
+        )
+        .to(
+          ".hero-content-item",
+          {
+            autoAlpha: 1,
+            y: 0,
+            stagger: 0.12,
+            duration: 0.7,
+          },
+          "-=0.5",
+        );
     },
     {
       scope: sectionRef,
@@ -61,7 +91,7 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="home"
-      className="relative flex justify-center items-center px-4 sm:px-8 w-full overflow-hidden text-foreground"
+      className="invisible relative flex justify-center items-center px-4 sm:px-8 w-full overflow-hidden text-foreground"
     >
       {/* Background lighting */}
 
@@ -112,7 +142,8 @@ export default function Hero() {
             src="/me.png"
             alt="Felix, web and mobile developer"
             fill
-            priority
+            loading="eager"
+            fetchPriority="high"
             sizes="(max-width: 640px) 340px, (max-width: 768px) 440px, (max-width: 1024px) 520px, 580px"
             className="drop-shadow-[0_20px_60px_rgba(0,0,0,0.4)] object-bottom object-contain hero-img"
           />
