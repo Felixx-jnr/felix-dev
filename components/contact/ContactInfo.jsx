@@ -32,16 +32,13 @@ export default function ContactInfo() {
         ".contact-info-item",
         {
           opacity: 0,
-          x: -40,
-          scale: 0.95,
+          x: -70,
         },
         {
           opacity: 1,
           x: 0,
-          scale: 1,
-          duration: 0.5,
           stagger: {
-            each: 0.15,
+            amount: 0.9,
             from: "start",
           },
           ease: "power3.out",

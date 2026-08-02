@@ -199,7 +199,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="group flex justify-center items-center gap-3 bg-gradient-to-r from-success via-primary to-accent disabled:opacity-60 mt-7 py-4 rounded-2xl w-full font-bold text-black duration-300 contact-form-item"
+          className="group flex justify-center items-center gap-3 bg-gradient-to-r from-success to-primary disabled:opacity-60 mt-7 py-4 rounded-2xl w-full font-bold text-black duration-300 contact-form-item"
         >
           {status === "sending" && (
             <>
