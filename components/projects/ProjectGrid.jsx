@@ -69,7 +69,18 @@ export default function ProjectGrid() {
       className="relative mx-auto px-6 py-12 max-w-7xl"
     >
       <div className="relative flex lg:flex-row flex-col items-start gap-12">
-        {/* LEFT COLUMN: Pinned Images Wrapper */}
+        {/* LEFT COLUMN: Scrolling Cards */}
+        <div className="space-y-24 w-full lg:w-1/2">
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={project.id || index}
+              project={project}
+              index={index}
+              ref={(el) => (cardRefs.current[index] = el)}
+            />
+          ))}
+        </div>
+        {/* RIGHT COLUMN: Pinned Images Wrapper */}
         <div className="hidden lg:block w-full lg:w-1/2 shrink-0">
           <div
             ref={pinnedWrapperRef}
@@ -93,18 +104,6 @@ export default function ProjectGrid() {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* RIGHT COLUMN: Scrolling Cards */}
-        <div className="space-y-24 w-full lg:w-1/2">
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={project.id || index}
-              project={project}
-              index={index}
-              ref={(el) => (cardRefs.current[index] = el)}
-            />
-          ))}
         </div>
       </div>
     </section>
