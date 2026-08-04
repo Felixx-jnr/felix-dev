@@ -9,7 +9,7 @@ export default function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="relative px-6 md:px-10 py-12 overflow-hidden scroll-mt-24"
+      className="relative px-2 sm:px-10 py-12 overflow-hidden scroll-mt-24"
     >
       <ProjectBackground />
 

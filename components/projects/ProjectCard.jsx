@@ -10,7 +10,7 @@ const ProjectCard = forwardRef(({ project, index }, ref) => {
   return (
     <article
       ref={ref}
-      className="group relative space-y-6 bg-background/30 hover:shadow-[0_0_60px_rgba(0,245,255,.15)] backdrop-blur-xl p-8 border border-white/10 hover:border-white/20 rounded-3xl transition-all duration-300"
+      className="group relative space-y-6 bg-background/30 hover:shadow-[0_0_60px_rgba(0,245,255,.15)] backdrop-blur-xl p-4 md:p-6 lg:p-8 border border-white/10 hover:border-white/20 rounded-3xl transition-all duration-300"
     >
       {/* Mobile-Only Image (Fallback for small screens) */}
       <div className="lg:hidden relative rounded-2xl w-full aspect-video overflow-hidden">

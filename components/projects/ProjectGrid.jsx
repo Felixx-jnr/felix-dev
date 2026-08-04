@@ -58,7 +58,7 @@ export default function ProjectGrid() {
         });
       });
 
-      return () => mm.revert(); // Cleanup matchMedia on unmount
+      return () => mm.revert();
     },
     { scope: containerRef },
   );
@@ -66,11 +66,11 @@ export default function ProjectGrid() {
   return (
     <section
       ref={containerRef}
-      className="relative mx-auto px-6 py-12 max-w-7xl"
+      className="relative mx-auto md:px-6 py-4 lg:py-12 max-w-7xl"
     >
       <div className="relative flex lg:flex-row flex-col items-start gap-12">
         {/* LEFT COLUMN: Scrolling Cards */}
-        <div className="space-y-24 w-full lg:w-1/2">
+        <div className="space-y-10 lg:space-y-24 w-full lg:w-1/2">
           {projects.map((project, index) => (
             <ProjectCard
               key={project.id || index}
