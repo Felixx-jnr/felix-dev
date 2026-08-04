@@ -18,25 +18,27 @@ export default function ProjectGrid() {
 
   useGSAP(
     () => {
-      // Ensure GSAP has updated layout dimensions
       ScrollTrigger.refresh();
 
-      // Only run sticky pin animation on desktop screens (>= 1024px)
       const mm = gsap.matchMedia();
 
       mm.add("(min-width: 1024px)", () => {
-        // 1. PIN THE LEFT IMAGE CONTAINER
+        const lastCard = cardRefs.current[cardRefs.current.length - 1];
+
+        // 1. PIN UNTIL THE LAST CARD REACHES THE ALIGNED POSITION
         ScrollTrigger.create({
           trigger: containerRef.current,
-          start: "top top+=96px", // Pins 96px (top-24) from top of viewport
-          end: "bottom bottom", // Keeps pinned until the right content finishes scrolling
+          start: "top top+=96px", // Pins 96px from top
+          // End pinning when the top of the LAST card matches the top of the pinned container
+          endTrigger: lastCard,
+          end: "top top+=96px",
           pin: pinnedWrapperRef.current,
-          pinSpacing: false, // Prevents GSAP from injecting massive padding
+          pinSpacing: false,
         });
 
-        // 2. SCRUB THE IMAGES AS CARDS SCROLL
+        // 2. SCRUB IMAGES AS CARDS SCROLL
         cardRefs.current.forEach((cardEl, index) => {
-          if (index === 0) return; // First image is already visible under the stack
+          if (index === 0) return;
 
           const currentImage = imagesRef.current[index];
 
@@ -49,8 +51,8 @@ export default function ProjectGrid() {
               ease: "none",
               scrollTrigger: {
                 trigger: cardEl,
-                start: "top 70%", // Triggers when the card enters the lower half of screen
-                end: "top 30%", // Fully revealed by time card hits upper half
+                start: "top 70%",
+                end: "top 30%",
                 scrub: true,
               },
             },
@@ -70,7 +72,8 @@ export default function ProjectGrid() {
     >
       <div className="relative flex lg:flex-row flex-col items-start gap-12">
         {/* LEFT COLUMN: Scrolling Cards */}
-        <div className="space-y-10 lg:space-y-24 w-full lg:w-1/2">
+
+        <div className="space-y-10 lg:space-y-24 lg:pb-[10vh] w-full lg:w-1/2">
           {projects.map((project, index) => (
             <ProjectCard
               key={project.id || index}
@@ -80,6 +83,7 @@ export default function ProjectGrid() {
             />
           ))}
         </div>
+
         {/* RIGHT COLUMN: Pinned Images Wrapper */}
         <div className="hidden lg:block w-full lg:w-1/2 shrink-0">
           <div

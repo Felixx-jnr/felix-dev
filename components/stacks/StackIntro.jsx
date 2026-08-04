@@ -31,7 +31,7 @@ export default function StackIntro() {
           trigger: introRef.current,
           start: "top 80%",
           end: "bottom 20%",
-          toggleActions: "play reverse play reverse",
+          toggleActions: "play none none reverse",
         },
       },
     );
