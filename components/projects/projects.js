@@ -3,90 +3,82 @@
 export const projects = [
   {
     id: 1,
-    title: "DevBoard",
+    title: "Fil Ecommerce",
     description:
-      "A modern project management platform with authentication, dashboards and analytics.",
+      "A full-stack ecommerce website with authentication, payments and admin dashboard.",
 
-    image: "/bb.png",
+    image: "/fil.png",
 
-    stack: ["Next.js", "Tailwind", "MongoDB", "Prisma"],
+    stack: ["Next.js", "Tailwind", "Redux", "MongoDB", "Express"],
 
-    github: "#",
-    live: "#",
+    github: "https://github.com/Felixx-jnr/FIL-finale",
+    live: "https://filstore.com.ng/",
   },
 
   {
     id: 2,
-    title: "Expense Tracker",
+    title: "Calvary Hill Church",
 
     description:
-      "A finance application for tracking income, expenses and monthly budgets.",
+      "A web app for church members to access sermons, events, and community features.",
 
-    image: "/me.png",
+    image: "/chc.png",
 
-    stack: ["React Native", "Expo", "Redux", "SQLite"],
+    stack: [
+      "Next.js",
+      "Tailwind",
+      "Node.js",
+      "Express",
+      "TypeScript",
+      "Amazon S3",
+    ],
 
-    github: "#",
-    live: "#",
+    github: "https://github.com/Felixx-jnr/calvary-hill-global-church",
+    live: "https://www.calvaryhillglobalchurch.org/",
   },
 
   {
     id: 3,
-    title: "CodeLearn",
+    title: "Johnnie Walker",
 
     description:
-      "Interactive learning platform with authentication and code playground.",
+      "A practice landing page for Johnnie Walker showcasing products and brand story.",
 
-    image: "/bb.png",
+    image: "/john.png",
 
-    stack: ["Next.js", "Tailwind", "TypeScript"],
+    stack: ["React", "Tailwind", "TypeScript", "Framer Motion"],
 
-    github: "#",
-    live: "#",
+    github: "https://github.com/Felixx-jnr/scroll-anime",
+    live: "https://scroll-anime.vercel.app/",
   },
 
   {
     id: 4,
-    title: "Shop.co",
+    title: "Charity",
 
     description:
-      "Full-stack ecommerce website with payments and admin dashboard.",
+      "A charity platform that shows organizations missions and what they do and allows people to get involved.",
 
-    image: "/bb.png",
+    image: "/char.png",
 
-    stack: ["Next.js", "Redux", "MongoDB", "Paystack"],
+    stack: ["HTML", "CSS", "JavaScript", "GSAP"],
 
-    github: "#",
-    live: "#",
+    github: "https://github.com/Felixx-jnr/Charity-master",
+    live: "https://charity-master.onrender.com/",
   },
 
   {
     id: 5,
-    title: "Travelista",
+    title: "Dashboard Design",
 
     description:
-      "A travel booking platform with interactive destination discovery.",
+      "A dashboard design for a web application with various UI components and data visualization.",
 
-    image: "/me.png",
+    image: "/dash.png",
 
-    stack: ["React", "Firebase", "Tailwind"],
+    stack: ["React", "Tailwind", "Chart.js"],
 
-    github: "#",
-    live: "#",
-  },
-
-  {
-    id: 6,
-    title: "Chatter",
-
-    description:
-      "Real-time messaging platform built with Socket.io and MongoDB.",
-
-    image: "/bb.png",
-
-    stack: ["Next.js", "Socket.io", "MongoDB"],
-
-    github: "#",
-    live: "#",
+    github: "https://github.com/Felixx-jnr/ss-admin-dashboard",
+    live: "https://ss-admin-dashboard.vercel.app/",
   },
 ];
