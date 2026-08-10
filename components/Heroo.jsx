@@ -194,7 +194,6 @@ export default function Hero() {
               fill
               loading="eager"
               fetchPriority="high"
-              priority={high}
               onLoad={() => setImageLoaded(true)}
               sizes="(max-width: 640px) 340px, (max-width: 768px) 440px, (max-width: 1024px) 520px, 580px"
               className="drop-shadow-[0_20px_60px_rgba(0,0,0,0.4)] object-bottom object-contain hero-img"
