@@ -76,7 +76,6 @@ export default function Hero() {
           },
         })
 
-        // Reveal the hero after all starting styles have been applied.
         .set(sectionRef.current, {
           visibility: "visible",
         })
@@ -141,7 +140,7 @@ export default function Hero() {
       <section
         ref={sectionRef}
         id="home"
-        className="invisible relative flex justify-center items-center px-4 sm:px-8 w-full overflow-hidden text-foreground"
+        className="relative flex justify-center items-center px-4 sm:px-8 w-full overflow-hidden text-foreground"
       >
         {/* Background lighting */}
 
