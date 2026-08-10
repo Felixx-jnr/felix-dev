@@ -189,19 +189,18 @@ export default function Hero() {
             <div className="bottom-10 left-1/2 absolute bg-black/40 blur-2xl rounded-full h-20 -translate-x-1/2 pointer-events-none" />
 
             <Image
-              src="/me.png"
+              src="/me.webp"
               alt="Felix, web and mobile developer"
               fill
               loading="eager"
               fetchPriority="high"
+              priority={high}
               onLoad={() => setImageLoaded(true)}
               sizes="(max-width: 640px) 340px, (max-width: 768px) 440px, (max-width: 1024px) 520px, 580px"
               className="drop-shadow-[0_20px_60px_rgba(0,0,0,0.4)] object-bottom object-contain hero-img"
             />
           </div>
         </div>
-        {/* Bottom image blend
-      <div className="bottom-0 absolute inset-x-0 bg-gradient-to-t from-background via-background/70 to-transparent h-40 pointer-events-none" /> */}
 
         {/* Left supporting content */}
 

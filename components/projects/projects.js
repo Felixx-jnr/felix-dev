@@ -7,7 +7,7 @@ export const projects = [
     description:
       "A full-stack ecommerce website with authentication, payments and admin dashboard.",
 
-    image: "/fil.png",
+    image: "/fil.webp",
 
     stack: ["Next.js", "Tailwind", "Redux", "MongoDB", "Express"],
 
@@ -22,7 +22,7 @@ export const projects = [
     description:
       "A web app for church members to access sermons, events, and community features.",
 
-    image: "/chc.png",
+    image: "/chc.webp",
 
     stack: [
       "Next.js",
@@ -44,7 +44,7 @@ export const projects = [
     description:
       "A practice landing page for Johnnie Walker showcasing products and brand story.",
 
-    image: "/john.png",
+    image: "/john.webp",
 
     stack: ["React", "Tailwind", "TypeScript", "Framer Motion"],
 
@@ -59,7 +59,7 @@ export const projects = [
     description:
       "A charity platform that shows organizations missions and what they do and allows people to get involved.",
 
-    image: "/char.png",
+    image: "/char.webp",
 
     stack: ["HTML", "CSS", "JavaScript", "GSAP"],
 
@@ -74,7 +74,7 @@ export const projects = [
     description:
       "A dashboard design for a web application with various UI components and data visualization.",
 
-    image: "/dash.png",
+    image: "/dash.webp",
 
     stack: ["React", "Tailwind", "Chart.js"],
 
