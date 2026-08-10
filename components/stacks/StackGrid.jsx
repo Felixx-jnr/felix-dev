@@ -21,15 +21,11 @@ export default function StackGrid() {
         {
           opacity: 0,
           y: 70,
-          scale: 0.85,
-          rotate: -4,
         },
 
         {
           opacity: 1,
           y: 0,
-          scale: 1,
-          rotate: 0,
           duration: 0.8,
           stagger: {
             amount: 0.9,
@@ -40,7 +36,7 @@ export default function StackGrid() {
             trigger: gridRef.current,
             start: "top 80%",
             end: "bottom 20%",
-            toggleActions: "play reverse play reverse",
+            toggleActions: "play none none reverse",
           },
         },
       );
