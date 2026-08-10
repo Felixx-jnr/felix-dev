@@ -16,9 +16,10 @@ const ProjectCard = forwardRef(({ project, index }, ref) => {
       <div className="lg:hidden relative rounded-2xl w-full aspect-video overflow-hidden">
         <Image
           src={project.image}
-          alt={project.title}
+          alt={`Screenshot of ${project.title}`}
           fill
           className="object-cover"
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
 
@@ -36,9 +37,14 @@ const ProjectCard = forwardRef(({ project, index }, ref) => {
         <Link
           href={project.live}
           target="_blank"
+          rel="noopener noreferrer"
           className="hover:bg-success/10 p-3 border border-success/30 rounded-full transition shrink-0"
+          aria-label={`View live demo of ${project.title}`}
         >
-          <FiArrowUpRight size={20} />
+          <FiArrowUpRight
+            size={20}
+            aria-hidden="true"
+          />
         </Link>
       </div>
 
@@ -48,7 +54,10 @@ const ProjectCard = forwardRef(({ project, index }, ref) => {
       </p>
 
       {/* Tech Stack */}
-      <div className="flex flex-wrap gap-2 pt-2">
+      <div
+        className="flex flex-wrap gap-2 pt-2"
+        aria-label={`Technologies used in ${project.title}`}
+      >
         {project.stack.map((tech) => (
           <TechBadge
             key={tech}
@@ -62,16 +71,23 @@ const ProjectCard = forwardRef(({ project, index }, ref) => {
         <Link
           href={project.github}
           target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center gap-2 text-foreground-secondary hover:text-success text-sm transition"
+          aria-label={`View source code for ${project.title} on GitHub (opens in a new tab)`}
         >
-          <FiGithub size={18} />
+          <FiGithub
+            aria-hidden="true"
+            size={18}
+          />
           Source Code
         </Link>
 
         <Link
           href={project.live}
           target="_blank"
+          rel="noopener noreferrer"
           className="font-medium text-success text-sm hover:underline"
+          aria-label={`Visit live demo of ${project.title} (opens in a new tab)`}
         >
           Live Demo →
         </Link>

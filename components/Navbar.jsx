@@ -74,10 +74,16 @@ export default function Navbar() {
 
         <div className="flex items-center gap-3">
           <button
+            aria-label="Open navigation menu"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
             onClick={() => setMenuOpen(true)}
             className="md:hidden text-foreground hover:text-success transition-colors"
           >
-            <FiMenu size={24} />
+            <FiMenu
+              size={24}
+              aria-hidden="true"
+            />
           </button>
 
           <Link
@@ -98,6 +104,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
+                aria-current={isActive ? "page" : undefined}
                 onClick={() => setActiveLink(link.href)}
                 className={`group relative flex flex-col items-center transition-colors duration-300 ${
                   isActive
@@ -125,10 +132,16 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <Link
             target="_blank"
+            aria-label="Download CV (opens in a new tab)"
+            rel="noopener noreferrer"
             href="https://drive.google.com/file/d/1PBd6asV5fIGmQEbWVAdXANbTjBtXPBji/view?usp=sharing"
             className="hidden md:flex items-center gap-2 bg-success/10 hover:bg-success/20 px-4 py-2 border border-success/30 rounded-full font-semibold text-success text-xs tracking-wide transition-all duration-300"
           >
-            Download CV <FiDownload size={14} />
+            Download CV{" "}
+            <FiDownload
+              aria-hidden="true"
+              size={14}
+            />
           </Link>
         </div>
       </nav>
@@ -141,6 +154,8 @@ export default function Navbar() {
 
         <button
           onClick={() => setMenuOpen(false)}
+          type="button"
+          aria-label="Close navigation menu"
           className="top-6 right-6 absolute text-foreground hover:text-success"
         >
           <FiX size={28} />

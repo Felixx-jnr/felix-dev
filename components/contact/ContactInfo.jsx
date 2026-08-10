@@ -52,8 +52,9 @@ export default function ContactInfo() {
   );
 
   return (
-    <div
+    <section
       ref={containerRef}
+      aria-labelledby="contact-heading-title"
       className="relative bg-background/35 backdrop-blur-2xl p-6 md:p-8 border border-white/10 rounded-[32px] overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-success/10 via-transparent to-primary/10 pointer-events-none" />
@@ -78,7 +79,10 @@ export default function ContactInfo() {
 
             const content = (
               <>
-                <div className="flex flex-none justify-center items-center bg-success/10 border border-success/20 rounded-2xl w-12 h-12 text-success group-hover:scale-110 duration-300">
+                <div
+                  aria-hidden="true"
+                  className="flex flex-none justify-center items-center bg-success/10 border border-success/20 rounded-2xl w-12 h-12 text-success group-hover:scale-110 duration-300"
+                >
                   <Icon size={20} />
                 </div>
 
@@ -118,7 +122,10 @@ export default function ContactInfo() {
         </div>
 
         <div className="flex items-center gap-3 mt-10 contact-info-item">
-          <span className="relative flex w-3 h-3">
+          <span
+            className="relative flex w-3 h-3"
+            aria-hidden="true"
+          >
             <span className="inline-flex absolute bg-success opacity-75 rounded-full w-full h-full animate-ping" />
             <span className="inline-flex relative bg-success rounded-full w-3 h-3" />
           </span>
@@ -128,6 +135,6 @@ export default function ContactInfo() {
           </span>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
