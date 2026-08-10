@@ -10,7 +10,7 @@ export default function MountainBackground() {
         src="/bb.webp"
         alt="mountains"
         fill
-        quality={40}
+        quality={25}
         priority
         className="opacity-30 dark:opacity-40 object-bottom object-cover select-none"
       />

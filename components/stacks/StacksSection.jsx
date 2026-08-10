@@ -3,7 +3,7 @@
 import StackIntro from "./StackIntro";
 import StackGrid from "./StackGrid";
 import StacksGlow from "./StacksGlow";
-import MountainBackground from "../hero/MountainBackground";
+import MountainBackground from "@/components/hero/MountainBackground";
 
 export default function StackSection() {
   return (

@@ -4,14 +4,14 @@ import StacksSection from "@/components/stacks/StacksSection";
 import ProjectSection from "@/components/projects/ProjectSection";
 import ServicesSection from "@/components/services/ServicesSection";
 import ContactSection from "@/components/contact/ContactSection";
-import Heroo from "@/components/Heroo";
+import Hero from "@/components/hero/Hero";
 
 function page() {
   return (
     <div>
       <Navbar />
 
-      <Heroo />
+      <Hero />
 
       <StacksSection />
 
