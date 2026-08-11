@@ -22,7 +22,7 @@ export default function Header({ icon, header, label, description, text }) {
       });
 
       tl.from(".badge", {
-        x: -80,
+        x: -50,
         opacity: 0,
         duration: 0.7,
         ease: "power3.out",
@@ -30,7 +30,7 @@ export default function Header({ icon, header, label, description, text }) {
         .from(
           ".title",
           {
-            x: 80,
+            x: 50,
             opacity: 0,
             duration: 0.8,
             ease: "power3.out",
@@ -66,7 +66,7 @@ export default function Header({ icon, header, label, description, text }) {
 
       <h2 className="mt-8 font-black text-5xl md:text-7xl title">
         {text}
-        <span className="bg-clip-text bg-gradient-to-r from-success via-primary to-accent text-transparent title">
+        <span className="bg-clip-text bg-gradient-to-r from-success via-primary to-accent text-transparent">
           {" "}
           {header}
         </span>
