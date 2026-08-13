@@ -107,8 +107,6 @@
 
   --font-heading: var(--font-space-grotesk);
   --font-body: var(--font-inter);
-  --font-mono: var(--font-roboto);
-  --font-sans: var(--font-body);
 
   --breakpoint-xs: 350px;
 }
