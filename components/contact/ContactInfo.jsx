@@ -102,7 +102,7 @@ export default function ContactInfo() {
                 <a
                   key={detail.id}
                   href={detail.href}
-                  className="group flex items-center gap-4 bg-white/[0.025] hover:bg-success/[0.07] p-4 border border-white/10 hover:border-success/30 rounded-2xl transition-all duration-300 contact-info-item"
+                  className="group flex items-center gap-4 bg-white/[0.025] hover:bg-success/[0.07] p-4 border border-white/10 hover:border-success/30 rounded-2xl transition-all duration-300"
                 >
                   {content}
                 </a>
@@ -112,7 +112,7 @@ export default function ContactInfo() {
             return (
               <div
                 key={detail.id}
-                className="group flex items-center gap-4 bg-white/[0.025] p-4 border border-white/10 rounded-2xl contact-info-item"
+                className="group flex items-center gap-4 bg-white/[0.025] p-4 border border-white/10 rounded-2xl"
               >
                 {content}
               </div>
