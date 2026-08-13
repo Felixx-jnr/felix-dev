@@ -3,6 +3,7 @@ import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Cursor from "@/components/cursor/Cursor";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -114,6 +115,7 @@ export default function RootLayout({
       `}
     >
       <body className="flex flex-col dark">
+        <Cursor />
         {children}
         <Analytics />
         <SpeedInsights />
