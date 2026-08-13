@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
 
   // Title Template: "Page Title | Felix — Frontend Developer"
   title: {
-    default: "Felix | Frontend Developer & Web Architect",
+    default: "Felix | Frontend Web & Mobile Developer",
     template: "%s | Felix Portfolio",
   },
   description:
@@ -115,6 +116,7 @@ export default function RootLayout({
       <body className="flex flex-col dark">
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
