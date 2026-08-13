@@ -134,7 +134,7 @@ export default function Navbar() {
             target="_blank"
             aria-label="Download CV (opens in a new tab)"
             rel="noopener noreferrer"
-            href="https://drive.google.com/file/d/1PBd6asV5fIGmQEbWVAdXANbTjBtXPBji/view?usp=sharing"
+            href="https://drive.google.com/file/d/1sgY3SFmZFBK2sBMoh17xCJdAEK9onjUy/view?usp=drive_link"
             className="hidden md:flex items-center gap-2 bg-success/10 hover:bg-success/20 px-4 py-2 border border-success/30 rounded-full font-semibold text-success text-xs tracking-wide transition-all duration-300"
           >
             Download CV{" "}
@@ -180,7 +180,7 @@ export default function Navbar() {
 
           <Link
             target="_blank"
-            href="https://drive.google.com/file/d/1PBd6asV5fIGmQEbWVAdXANbTjBtXPBji/view?usp=sharing"
+            href="https://drive.google.com/file/d/1sgY3SFmZFBK2sBMoh17xCJdAEK9onjUy/view?usp=drive_link"
             className="md:hidden flex items-center gap-2 bg-success/10 hover:bg-success/20 px-5 py-3 border border-success/30 rounded-full font-semibold text-success text-xs tracking-wide transition-all duration-300"
           >
             Download CV
