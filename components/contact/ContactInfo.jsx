@@ -32,18 +32,17 @@ export default function ContactInfo() {
         ".contact-info-item",
         {
           opacity: 0,
-          x: -70,
+          y: 40,
         },
         {
           opacity: 1,
-          x: 0,
+          y: 0,
           stagger: {
             amount: 0.9,
             from: "start",
           },
           ease: "power3.out",
         },
-        "-=0.3",
       );
     },
     {

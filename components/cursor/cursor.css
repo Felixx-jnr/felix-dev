@@ -13,13 +13,13 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--success);
+  background: var(--primary);
 }
 
 .cursor-ring {
   width: 36px;
   height: 36px;
-  border: 1px solid var(--success);
+  border: 1px solid var(--primary);
   border-radius: 50%;
 }
 
@@ -27,7 +27,7 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: color-mix(in srgb, var(--success) 15%, transparent);
+  background: color-mix(in srgb, var(--primary) 15%, transparent);
   filter: blur(18px);
 }
 
